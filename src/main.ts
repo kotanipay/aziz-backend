@@ -25,13 +25,13 @@ async function bootstrap() {
       { type: 'http', scheme: 'bearer', bearerFormat: 'JWT' },
       'JWT',
     )
-    .setVersion('3.0')
+    .setVersion('1.0')
     .build();
   const document = SwaggerModule.createDocument(app, config, {
     include: [],
   });
 
   SwaggerModule.setup('api/docs', app, document);
-  await app.listen(process.env.PORT || 3000);
+  await app.listen(process.env.PORT || 3200);
 }
 bootstrap();
